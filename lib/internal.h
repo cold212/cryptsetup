@@ -57,6 +57,13 @@
 
 #define at_least(a, b) ({ __typeof__(a) __at_least = (a); (__at_least >= (b))?__at_least:(b); })
 
+#define move_ref(x, y) \
+	do { \
+		typeof (x) *_px = &(x), *_py = &(y); \
+		*_px = *_py; \
+		*_py = NULL; \
+	} while (0)
+
 #define CRYPT_DEFAULT_SEGMENT 0
 
 struct crypt_device;
