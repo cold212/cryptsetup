@@ -63,9 +63,9 @@ int VERITY_FEC_create(struct crypt_device *cd,
 		      struct crypt_params_verity *params,
 		      struct device *fec_device);
 
-uint64_t VERITY_hash_offset_block(struct crypt_params_verity *params);
+uint64_t VERITY_hash_offset_block(const struct crypt_params_verity *params);
 
-uint64_t VERITY_hash_blocks(struct crypt_device *cd, struct crypt_params_verity *params);
+uint64_t VERITY_hash_blocks(struct crypt_device *cd, const struct crypt_params_verity *params);
 
 int VERITY_UUID_generate(struct crypt_device *cd, char **uuid_string);
 
